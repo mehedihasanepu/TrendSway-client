@@ -17,12 +17,12 @@ import BrandProducts from "../BrandProducts/BrandProducts";
 
 const BrandDetails = () => {
 
-    const lodaerData = useLoaderData();
+    const loaderData = useLoaderData();
     const { id } = useParams()
     const intId = parseInt(id)
-    const detailes = lodaerData.find(brand => brand.id === intId)
-    const { brand_name, title, slider_img3, slider_img2, slider_img1 } = detailes;
-    console.log(detailes);
+    const details = loaderData.find(brand => brand.id === intId)
+    const { brand_name, title, slider_img3, slider_img2, slider_img1 } = details;
+    console.log(details);
 
 
     const [product, setProduct] = useState([]);

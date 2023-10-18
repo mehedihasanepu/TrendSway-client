@@ -27,7 +27,7 @@ const Navbar = () => {
     const navLink = <>
         <NavLink className="text-xl font-semibold text-white p-2 px-4 rounded-lg lg:mr-10" to="/">Home</NavLink>
         <NavLink className="text-xl font-semibold text-white p-2 px-4 rounded-lg lg:mr-10" to="/addProduct">Add Product</NavLink>
-        <NavLink className="text-xl font-semibold text-white p-2 px-4 rounded-lg lg:mr-10" to="/blog">Blog</NavLink>
+        <NavLink className="text-xl font-semibold text-white p-2 px-4 rounded-lg lg:mr-10" to="/cart">Cart</NavLink>
         {/* {
             user ?
                 <button onClick={handleSingOut} className="lg:hidden text-xl font-semibold text-white p-2 px-4 rounded-lg lg:mr-10">Sing out</button>
