@@ -1,0 +1,54 @@
+[
+    {
+      "id": 1,
+      "brand_name": "Nike",
+      "title": "Nike Collection",
+      "brand_img": "https://i.ibb.co/mzNp6JS/Nike.png",
+      "slider_img1": "https://i.ibb.co/Sn5SjqH/Nike1.jpg",
+      "slider_img2": "https://i.ibb.co/n8T6rz9/Nike2.jpg",
+      "slider_img3": "https://i.ibb.co/7p11brX/Nike3.jpg"
+    },
+    {
+      "id": 2,
+      "brand_name": "Adidas",
+      "title": "Adidas Collection",
+      "brand_img": "https://i.ibb.co/dfp6Hvp/Adidas.png",
+      "slider_img1": "https://i.ibb.co/WsrwFPs/Adidas1.png",
+      "slider_img2": "https://i.ibb.co/sWTGtSf/Adidas2.jpg",
+      "slider_img3": "https://i.ibb.co/hsJwtBt/Adidas3.jpg"
+    },
+    {
+      "id": 3,
+      "brand_name": "Gucci",
+      "title": "Gucci Collection",
+      "brand_img": "https://i.ibb.co/cv59hZd/Gucci.png",
+      "slider_img1": "https://i.ibb.co/6BwVJZc/Gucci1.jpg",
+      "slider_img2": "https://i.ibb.co/rpCzMjy/Gucci2.webp",
+      "slider_img3": "https://i.ibb.co/mySjDF4/Gucci3.jpg"
+    },
+    {
+      "id": 4,
+      "brand_name": "Zara",
+      "title": "Zara Collection",
+      "brand_img": "https://i.ibb.co/y48JS38/Zara.png",
+      "slider_img1": "https://i.ibb.co/nzpVCDb/zara-social-media-redesign.png",
+      "slider_img2": "https://i.ibb.co/wwBhg4R/1-K-ssj-Ln2i-PYdxo-GGFK5-Njg.jpg",
+      "slider_img3": "https://i.ibb.co/JvfNMvg/2f8475150061411-62f2e0301129d.jpg"
+    },
+    {
+      "id": 5,
+      "brand_name": "H&M",
+      "title": "H&M Collection",
+      "brand_img": "https://i.ibb.co/StD3J3w/H-M.png",
+      "slider_img1": "https://i.ibb.co/bKMdwz2/H-M1.jpg",
+      "slider_img2": "https://i.ibb.co/ZLqQLP9/H-M2.png",
+      "slider_img3": "https://i.ibb.co/4Jd2D2T/H-M3.webp"
+    },
+    {
+      "id": 6,
+      "brand_name": "Levi's",
+      "title": "Stock Out",
+      "brand_img": "https://i.ibb.co/H4c1RLB/Levi-s.png"
+    }
+  ]
+  
