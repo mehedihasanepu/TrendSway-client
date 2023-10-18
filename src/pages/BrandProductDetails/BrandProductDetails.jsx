@@ -6,10 +6,37 @@ const BrandProductDetails = () => {
     const { id } = useParams()
     const productDetails = loaderData.find(product => product._id === id)
     const { productName, productImg, details, brandName, productType, price, rating } = productDetails;
-    console.log(productDetails, loaderData.length);
+    console.log(productDetails);
+
+    const newProductData = {
+        productName: productName,
+        productImg:productImg,
+        details:details,
+        brandName:brandName,
+        productType:productType,
+        price:price,
+        rating:price
+    };
+
+    const handleAddToCart = () => {
 
 
 
+        fetch("http://localhost:5000/carts", {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newProductData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    alert('Product Added In Cart')
+                }
+            })
+    }
     return (
         <div>
             <div className="card lg:card-side bg-base-100 shadow-xl flex" data-aos="fade-up"
@@ -28,8 +55,8 @@ const BrandProductDetails = () => {
                     <p>{details}</p>
 
                     <div className="flex justify-between gap-5">
-                        <Link className="card-actions flex-1">
-                            <button className="btn bg-gradient-to-r from-[#ff4c05] to-[#ffa719] text-white w-full rounded-xl ">Add to Cart</button>
+                        <Link onClick={handleAddToCart} className="card-actions flex-1">
+                            <button className="btn bg-gradient-to-r from-[#ff4c05] to-[#ffa719] text-white w-full rounded-xl">Add to Cart</button>
                         </Link>
                         <Link className="card-actions flex-1 ">
                             <button className="btn bg-gradient-to-r from-[#ff4c05] to-[#ffa719] text-white w-full rounded-xl ">Update Product</button>
