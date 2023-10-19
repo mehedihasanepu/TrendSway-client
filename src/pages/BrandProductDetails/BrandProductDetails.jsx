@@ -15,7 +15,7 @@ const BrandProductDetails = () => {
         brandName:brandName,
         productType:productType,
         price:price,
-        rating:price
+        rating:rating
     };
 
     const handleAddToCart = () => {
