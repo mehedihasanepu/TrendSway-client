@@ -9,7 +9,7 @@ const CartCard = ({ cardProduct, cardProducts, setCardProducts }) => {
     const handleDelete = id => {
         console.log(id);
 
-        fetch(`http://localhost:5000/carts/${id}`, {
+        fetch(`https://trend-sway-server.vercel.app/carts/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

@@ -5,7 +5,7 @@ const BrandProductDetails = () => {
     const loaderData = useLoaderData();
     const { id } = useParams()
     const productDetails = loaderData.find(product => product._id === id)
-    const { productName, productImg, details, brandName, productType, price, rating } = productDetails;
+    const {_id, productName, productImg, details, brandName, productType, price, rating } = productDetails;
     console.log(productDetails);
 
     const newProductData = {
@@ -22,7 +22,7 @@ const BrandProductDetails = () => {
 
 
 
-        fetch("http://localhost:5000/carts", {
+        fetch("https://trend-sway-server.vercel.app/carts", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -57,9 +57,6 @@ const BrandProductDetails = () => {
                     <div className="flex justify-between gap-5">
                         <Link onClick={handleAddToCart} className="card-actions flex-1">
                             <button className="btn bg-gradient-to-r from-[#ff4c05] to-[#ffa719] text-white w-full rounded-xl">Add to Cart</button>
-                        </Link>
-                        <Link className="card-actions flex-1 ">
-                            <button className="btn bg-gradient-to-r from-[#ff4c05] to-[#ffa719] text-white w-full rounded-xl ">Update Product</button>
                         </Link>
 
                     </div>

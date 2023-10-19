@@ -20,7 +20,7 @@ const BrandProducts = ({ product }) => {
                     <Link className="card-actions flex-1" to={`/brandProductDetails/${_id}`}>
                         <button className="btn bg-gradient-to-r from-[#ff4c05] to-[#ffa719] text-white w-full rounded-xl ">See Details !</button>
                     </Link>
-                    <Link className="card-actions flex-1 ">
+                    <Link className="card-actions flex-1" to={`/update/${_id}`}>
                         <button className="btn bg-gradient-to-r from-[#ff4c05] to-[#ffa719] text-white w-full rounded-xl ">Update Product</button>
                     </Link>
 
