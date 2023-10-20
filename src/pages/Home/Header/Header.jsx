@@ -1,5 +1,5 @@
 
-import bannerImg from "../../../assets/images/banner-img.png"
+import bannerImg from "../../../assets/images/image/banner-img.png"
 
 
 

@@ -1,43 +1,45 @@
 import { Link, NavLink } from "react-router-dom";
 import UserProfile from "../../../component/UserProfile/UserProfile";
-import logo from "../../../assets/images/logo.png";
-import { useState } from "react";
+import logo from "../../../assets/images/image/logo.png";
+import { useContext } from "react";
+import toast from "react-hot-toast";
+import { AuthContext } from "../../../provider/AuthProvider";
+import singInIcon from "../../../assets/images/icon/singIn.gif"
+import singOutIcon from "../../../assets/images/icon/singOut.gif"
+import logInIcon from "../../../assets/images/icon/login.gif"
+
 
 const Navbar = () => {
 
 
-    // const { user, logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
 
-
-    const [user, setUser] = useState(true)
-
-
-    // const handleSingOut = () => {
-    //     logOut()
-    //         .then(result => {
-    //             console.log(result.user);
-    //         })
-    //         .catch(error => {
-    //             console.error(error);
-    //             toast.success('Sing Out SuccessFull')
-    //         })
-    // }
+    const handleSingOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error);
+                toast.success('Sing Out SuccessFull')
+            })
+    }
 
     const navLink = <>
-        <NavLink className="text-xl font-semibold text-white p-2 px-4 rounded-lg lg:mr-10" to="/">Home</NavLink>
-        <NavLink className="text-xl font-semibold text-white p-2 px-4 rounded-lg lg:mr-10" to="/addProduct">Add Product</NavLink>
-        <NavLink className="text-xl font-semibold text-white p-2 px-4 rounded-lg lg:mr-10" to="/cart">Cart</NavLink>
-        {/* {
+        <NavLink className="btn btn-sm mr-5" to="/">Home</NavLink>
+        <NavLink className="btn btn-sm mr-5" to="/addProduct">Add Product</NavLink>
+        <NavLink className="btn btn-sm mr-72" to="/cart">My Cart</NavLink>
+        {
             user ?
-                <button onClick={handleSingOut} className="lg:hidden text-xl font-semibold text-white p-2 px-4 rounded-lg lg:mr-10">Sing out</button>
+                <button onClick={handleSingOut} className="lg:hidden text-xl font-semibold p-2 px-4 rounded-lg lg:mr-10">Sing out</button>
                 :
                 <>
-                    <NavLink className="lg:hidden text-xl font-semibold text-white p-2 px-4 rounded-lg lg:mr-10" to="/login">Login</NavLink>
+                    <NavLink className="lg:hidden text-xl font-semibold p-2 px-4 rounded-lg lg:mr-10" to="/login">Login</NavLink>
 
-                    <NavLink className=" lg:hidden text-xl font-semibold text-white p-2 px-4 rounded-lg lg:mr-10" to="/register">Register</NavLink>
+                    <NavLink className=" lg:hidden text-xl font-semibold p-2 px-4 rounded-lg lg:mr-10" to="/register">Register</NavLink>
                 </>
-        } */}
+        }
 
 
 
@@ -45,9 +47,9 @@ const Navbar = () => {
 
 
     return (
-        <div>
-            <div >
-                <div className={`flex flex-row items-center md:px-5 justify-between  py-2 md:py-4   bg-[#93502c] `}>
+        <div className="max-w-screen-xl mx-auto mb-1 rounded-b-2xl border-b-8 border-x-2 border-gray-300">
+            <div  >
+                <div className={`flex flex-row items-center md:px-5 justify-between `}>
 
                     <div>
                         <img className="w-36 h-20" src={logo} alt="" />
@@ -55,10 +57,15 @@ const Navbar = () => {
                     <div className="lg:hidden flex">
                         <UserProfile></UserProfile>
                         <div className=" dropdown flex-row-reverse">
-                            <label tabIndex={0} className=" btn px-2 md:px-4 ">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            <label tabIndex={0} className="px-1">
+                                <label className="btn btn-circle swap swap-rotate">
+                                    <input type="checkbox" />
+                                    <svg className="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg>
+                                    <svg className="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" /></svg>
+
+                                </label>
                             </label>
-                            <ul tabIndex={0} className="menu dropdown-content w-40 mt-3 gap-3 z-[2] p-2 shadow relative right-1 bg-black bg-opacity-50 rounded-box flex-row-reverse ">
+                            <ul tabIndex={0} className="menu dropdown-content w-44 mt-3 gap-3 z-[2] p-2 shadow relative right-1 bg-white bg-opacity-70 rounded-box flex-row-reverse ">
                                 {
                                     navLink
                                 }
@@ -75,15 +82,28 @@ const Navbar = () => {
                         <UserProfile></UserProfile>
                         {
                             user ?
-                                <button className="btn bg-[#ffeacf]">Sing out</button>
+                                <div >
+                                    <button onClick={handleSingOut} className="form-control btn ">
+                                        <div className="flex items-center">
+                                            <p >Sing Out</p>
+                                            <img className="w-10" src={singOutIcon} alt="" />
+                                        </div>
+                                    </button>
+                                </div>
 
                                 :
                                 <div className="space-x-2">
-                                    <Link to="/login">
-                                        <button className="btn bg-[#ffeacf]">Login</button>
+                                    <Link className="btn " to="/login">
+                                        <div className=" flex items-center">
+                                            <button className=" text-lg">Log In</button>
+                                            <img className="w-12" src={logInIcon} alt="" />
+                                        </div>
                                     </Link>
-                                    <Link to="/register">
-                                        <button className="btn bg-[#ffeacf]">Sing Up</button>
+                                    <Link className=" btn " to="/singUp">
+                                        <div className=" flex items-center">
+                                            <button className=" text-lg">Sing Up</button>
+                                            <img className="w-12" src={singInIcon} alt="" />
+                                        </div>
                                     </Link>
 
 

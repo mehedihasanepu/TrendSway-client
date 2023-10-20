@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import addIcon from "../../assets/images/icon/addIcon.gif"
 
 const AddProduct = () => {
     const [brandName, setBrandName] = useState('');
@@ -14,7 +15,7 @@ const AddProduct = () => {
         const details = form.get("details");
         const newProduct = { productName, productImg, brandName, productType, price, rating, details };
         console.log(newProduct);
-     
+
 
         fetch('https://trend-sway-server.vercel.app/products', {
             method: 'POST',
@@ -113,8 +114,11 @@ const AddProduct = () => {
                         </label>
                         <textarea type="text" name="details" className="textarea textarea-bordered" placeholder="Details"></textarea>
                     </div>
-                    <div type="submit" className="form-control mt-2">
-                        <button className="btn rounded-3xl bg-slate-300">Add Product</button>
+                    <div type="submit" className="form-control btn bg-gray-300 w-1/4 mx-auto rounded-3xl mt-2 ">
+                        <div className="flex items-center">
+                            <p >Add Product</p>
+                            <img className="w-12" src={addIcon} alt="" />
+                        </div>
                     </div>
                 </form>
             </div>

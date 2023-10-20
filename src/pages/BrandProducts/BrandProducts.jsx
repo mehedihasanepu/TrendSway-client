@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import detailsIcon from "../../assets/images/icon/details.gif"
+import updateIcon from "../../assets/images/icon/update.gif"
 
 const BrandProducts = ({ product }) => {
-    const {_id, productName, productImg, brandName, productType, price, rating } = product;
+    const { _id, productName, productImg, brandName, productType, price, rating } = product;
     return (
         <div className="drop-shadow-2xl ">
             <div className="card glass bg-stone-50 bg-opacity-70">
@@ -17,12 +19,19 @@ const BrandProducts = ({ product }) => {
 
 
                     <div className="flex justify-between gap-5">
-                    <Link className="card-actions flex-1" to={`/brandProductDetails/${_id}`}>
-                        <button className="btn bg-gradient-to-r from-[#ff4c05] to-[#ffa719] text-white w-full rounded-xl ">See Details !</button>
-                    </Link>
-                    <Link className="card-actions flex-1" to={`/update/${_id}`}>
-                        <button className="btn bg-gradient-to-r from-[#ff4c05] to-[#ffa719] text-white w-full rounded-xl ">Update Product</button>
-                    </Link>
+
+                        <Link to={`/brandProductDetails/${_id}`} className="card-actions flex-1 btn bg-gray-300 w-1/2 mx-auto rounded-xl pt-1 ">
+                            <div className="flex items-center gap-2">
+                                <p >Details</p>
+                                <img className="w-10" src={detailsIcon} alt="" />
+                            </div>
+                        </Link>
+                        <Link to={`/update/${_id}`} className="card-actions flex-1 btn bg-gray-300 w-1/2 mx-auto rounded-xl pt-2 ">
+                            <div className="flex items-center gap-2">
+                                <p >Update Product</p>
+                                <img className="w-8" src={updateIcon} alt="" />
+                            </div>
+                        </Link>
 
                     </div>
                 </div>

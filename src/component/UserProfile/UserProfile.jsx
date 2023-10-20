@@ -1,12 +1,12 @@
-// import { useContext } from "react";
-// import { AuthContext } from "../../provider/AuthProvider";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const UserProfile = () => {
 
-    // const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     return (
         <div>
-            {/* {
+            {
                 user &&
                 <div className="dropdown dropdown-end pr-2">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -14,7 +14,7 @@ const UserProfile = () => {
                             <img src={user.photoURL} />
                         </div>
                     </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#ffeace] rounded-box ">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white opacity-80 rounded-box ">
                         <li>
                             <p>{user.displayName}</p>
                         </li>
@@ -23,7 +23,7 @@ const UserProfile = () => {
                         </li>
                     </ul>
                 </div>
-            } */}
+            }
         </div>
     );
 };

@@ -1,22 +1,27 @@
+
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import cartIcon from "../../assets/images/icon/cart.gif"
 
 const BrandProductDetails = () => {
+
+
 
     const loaderData = useLoaderData();
     const { id } = useParams()
     const productDetails = loaderData.find(product => product._id === id)
-    const {_id, productName, productImg, details, brandName, productType, price, rating } = productDetails;
+    const { productName, productImg, details, brandName, productType, price, rating } = productDetails;
     console.log(productDetails);
 
     const newProductData = {
         productName: productName,
-        productImg:productImg,
-        details:details,
-        brandName:brandName,
-        productType:productType,
-        price:price,
-        rating:rating
+        productImg: productImg,
+        details: details,
+        brandName: brandName,
+        productType: productType,
+        price: price,
+        rating: rating
     };
+
 
     const handleAddToCart = () => {
 
@@ -55,10 +60,12 @@ const BrandProductDetails = () => {
                     <p>{details}</p>
 
                     <div className="flex justify-between gap-5">
-                        <Link onClick={handleAddToCart} className="card-actions flex-1">
-                            <button className="btn bg-gradient-to-r from-[#ff4c05] to-[#ffa719] text-white w-full rounded-xl">Add to Cart</button>
+                        <Link onClick={handleAddToCart} className="card-actions  btn bg-gray-300 w-1/2 mx-auto rounded-3xl mt-2 ">
+                            <div className="flex items-center">
+                                <p >Add to Cart</p>
+                                <img className="w-12" src={cartIcon} alt="" />
+                            </div>
                         </Link>
-
                     </div>
                 </div>
             </div>

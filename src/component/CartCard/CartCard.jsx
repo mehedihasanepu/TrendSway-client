@@ -1,4 +1,7 @@
-import { useState } from "react";
+
+import deleteIcon from "../../assets/images/icon/delete.gif"
+
+
 const CartCard = ({ cardProduct, cardProducts, setCardProducts }) => {
 
     const { _id, productName, productImg, details, brandName, productType, price, rating } = cardProduct;
@@ -39,9 +42,12 @@ const CartCard = ({ cardProduct, cardProducts, setCardProducts }) => {
 
                     <h4 className="text-[17px] font-semibold text-[#ff4c05]" >Rating: <span className="text-xl">{rating}</span>/5</h4>
 
-                    <button onClick={() => handleDelete(_id)} className="card-actions">
-                        <button className="btn bg-gradient-to-r from-[#ff4c05] to-[#ffa719] text-white justify-end rounded-xl">Delete</button>
-                    </button>
+                    <div onClick={() => handleDelete(_id)} className="card-actions btn bg-gray-200 w-1/2 rounded-3xl mt-2 ">
+                        <div className="flex items-center py-1 px-4">
+                            <p >Delete</p>
+                            <img className="w-11" src={deleteIcon} alt="" />
+                        </div>
+                    </div>
 
                 </div>
             </div>

@@ -11,8 +11,10 @@ const Brands = () => {
     }, [])
 
     return (
-        <div className="mt-20">
+        <div className="mt-10 max-w-screen-xl mx-auto">
+            <h2 className="text-4xl md:text-5xl text-center font-semibold py-6" >Popular Brands</h2>
             <div className="flex justify-between items-center">
+
                 {
                     brands.map(brand => <div key={brand.id} >
 

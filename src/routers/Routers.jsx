@@ -8,6 +8,9 @@ import AddProduct from "../pages/AddProduct/AddProduct";
 import BrandProductDetails from "../pages/BrandProductDetails/BrandProductDetails";
 import Cart from "../pages/Cart/Cart";
 import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
+import Login from "../pages/LogIn/LogIn";
+import SingUp from "../pages/SingUp/SingUp";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 
 
@@ -26,9 +29,9 @@ const router = createBrowserRouter([
                 element: <AddProduct></AddProduct>
             },
             {
-                path:'/update/:id',
-                element:<UpdateProduct></UpdateProduct>,
-                loader:({params})=>fetch(`http://localhost:5000/products/${params.id}`)
+                path: '/update/:id',
+                element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
             },
             {
                 path: "/brandDetails/:id",
@@ -37,13 +40,21 @@ const router = createBrowserRouter([
             },
             {
                 path: "/brandProductDetails/:id",
-                element: <BrandProductDetails></BrandProductDetails>,
+                element: <PrivateRoute><BrandProductDetails></BrandProductDetails></PrivateRoute>,
                 loader: () => fetch("https://trend-sway-server.vercel.app/products")
             },
             {
                 path: '/cart',
-                element: <Cart></Cart>,
+                element: <PrivateRoute><Cart></Cart></PrivateRoute>,
                 loader: () => fetch("https://trend-sway-server.vercel.app/carts")
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/singUp',
+                element: <SingUp></SingUp>
             }
         ]
     },
