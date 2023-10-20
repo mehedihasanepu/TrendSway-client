@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import logo from "../../../assets/images/image/logo2.png";
 
 const Footer = () => {
@@ -15,19 +16,17 @@ const Footer = () => {
                     </div>
                     <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
                         <div className="space-y-3">
-                            <h3 className="tracki uppercase dark:text-gray-50">Product</h3>
+                            <h3 className="tracki uppercase dark:text-gray-50">Go to</h3>
                             <ul className="space-y-1">
                                 <li>
-                                    <a rel="noopener noreferrer" href="#">Features</a>
+                                    <NavLink className="text-sm" to="/">Home</NavLink>
                                 </li>
                                 <li>
-                                    <a rel="noopener noreferrer" href="#">Integrations</a>
+                                    <NavLink className="text-sm " to="/addProduct">Add Product</NavLink>
+
                                 </li>
                                 <li>
-                                    <a rel="noopener noreferrer" href="#">Pricing</a>
-                                </li>
-                                <li>
-                                    <a rel="noopener noreferrer" href="#">FAQ</a>
+                                    <NavLink className=" text-sm " to="/cart">My Cart</NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -78,7 +77,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="py-6 text-sm text-center dark:text-gray-400">© 1968 Company Co. All rights reserved.</div>
+                <div className="py-6 text-sm text-center dark:text-gray-400">© 2023 TrendSway. All rights reserved.</div>
             </footer>
         </div>
     );
