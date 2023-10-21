@@ -1,10 +1,14 @@
 
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import cartIcon from "../../assets/images/icon/cart.gif"
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const BrandProductDetails = () => {
 
-
+    const { user } = useContext(AuthContext)
+    console.log(user);
 
     const loaderData = useLoaderData();
     const { id } = useParams()
@@ -19,7 +23,8 @@ const BrandProductDetails = () => {
         brandName: brandName,
         productType: productType,
         price: price,
-        rating: rating
+        rating: rating,
+        email: user.email
     };
 
 
@@ -38,7 +43,12 @@ const BrandProductDetails = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    alert('Product Added In Cart')
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Product add to cart',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
                 }
             })
     }

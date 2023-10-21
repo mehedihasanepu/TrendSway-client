@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import updateIcon from '../../assets/images/icon/update.gif';
+import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
 
@@ -34,7 +34,12 @@ const UpdateProduct = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    alert('Product Updated Successfully')
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Product Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
                     e.target.reset();
                 }
             })
@@ -119,12 +124,8 @@ const UpdateProduct = () => {
                         </label>
                         <textarea type="text" name="details" className="textarea textarea-bordered" defaultValue={details} placeholder="Details"></textarea>
                     </div>
-                    <div type="submit" className="form-control btn bg-gray-300 w-3/4 md:w-1/2 lg:w-1/4 mx-auto rounded-3xl mt-2 ">
-                        <div className="flex items-center">
-                            <p >Update Product</p>
-                            <img className="w-10" src={updateIcon} alt="" />
-                        </div>
-                    </div>
+                    
+                    <input type="submit" value="Update Product" className="btn btn-block w-3/4 md:w-1/2 lg:w-1/4 mx-auto rounded-3xl mt-2 " />
                 </form>
             </div>
         </div>

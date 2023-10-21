@@ -1,30 +1,54 @@
 
 import deleteIcon from "../../assets/images/icon/delete.gif"
-
+import Swal from 'sweetalert2'
 
 const CartCard = ({ cardProduct, cardProducts, setCardProducts }) => {
+
 
     const { _id, productName, productImg, details, brandName, productType, price, rating } = cardProduct;
     console.log(cardProduct);
 
 
 
+
+
+                    
     const handleDelete = id => {
-        console.log(id);
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+    
 
         fetch(`https://trend-sway-server.vercel.app/carts/${id}`, {
             method: "DELETE"
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount > 0) {
-                    alert('users delete successfully');
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
 
                     const remainingProduct = cardProducts.filter(product => product._id !== id)
                     setCardProducts(remainingProduct)
                 }
             })
+
+
+    }
+})
+
     }
 
     return (

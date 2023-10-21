@@ -44,10 +44,9 @@ const SingUp = () => {
             return;
         }
 
-        //reset
         setRegisterError('')
 
-        // Create User 
+
         createUser(email, password)
             .then(result => {
                 updateProfile(result.user, {

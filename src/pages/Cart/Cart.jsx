@@ -1,12 +1,23 @@
 import { useLoaderData } from "react-router-dom";
 import CartCard from "../../component/CartCard/CartCard";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const Cart = () => {
 
-    const loaderData = useLoaderData()
-    const [cardProducts, setCardProducts] = useState(loaderData)
+    const loaderData = useLoaderData();
+    const { user } = useContext(AuthContext)
+
+
+
+    const findCart = loaderData.filter(carts => carts.email === user.email)
+
+
+
+
+
+    const [cardProducts, setCardProducts] = useState(findCart)
 
 
     return (

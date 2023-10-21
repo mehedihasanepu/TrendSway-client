@@ -12,111 +12,111 @@ import BrandProducts from "../BrandProducts/BrandProducts";
 import loadingIcon from "../../assets/images/icon/loading.gif";
 
 const BrandDetails = () => {
-  const loaderData = useLoaderData();
-  const [loading,setLoading]=useState(true)
-  const { id } = useParams();
-  const intId = parseInt(id);
-  const details = loaderData.find((brand) => brand.id === intId);
-  const { brand_name, title, slider_img3, slider_img2, slider_img1 } = details;
+    const loaderData = useLoaderData();
+    const [loading, setLoading] = useState(true)
+    const { id } = useParams();
+    const intId = parseInt(id);
+    const details = loaderData.find((brand) => brand.id === intId);
+    const { brand_name, title, slider_img3, slider_img2, slider_img1 } = details;
 
-  const [product, setProduct] = useState([]);
-  const [filteredProduct, setFilteredProduct] = useState([]);
+    const [product, setProduct] = useState([]);
+    const [filteredProduct, setFilteredProduct] = useState([]);
 
-  useEffect(() => {
-    fetch("https://trend-sway-server.vercel.app/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data);
-        setLoading(false)
-      });
-  }, []);
+    useEffect(() => {
+        fetch("https://trend-sway-server.vercel.app/products")
+            .then((res) => res.json())
+            .then((data) => {
+                setProduct(data);
+                setLoading(false)
+            });
+    }, []);
 
-  useEffect(() => {
-    setFilteredProduct(product.filter((product) => product.brandName === brand_name));
-  }, [product, brand_name]);
+    useEffect(() => {
+        setFilteredProduct(product.filter((product) => product.brandName === brand_name));
+    }, [product, brand_name]);
 
-  const backgroundStyle1 = {
-    backgroundImage: `url('/src/assets/images/image/wave_right_corner.png')`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    minHeight: "500px",
-  };
-  const backgroundStyle2 = {
-    backgroundImage: `url('/src/assets/images/image/wave_left_corner.png')`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    minHeight: "500px",
-  };
+    const backgroundStyle1 = {
+        backgroundImage: `url('/src/assets/images/image/wave_right_corner.png')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "500px",
+    };
+    const backgroundStyle2 = {
+        backgroundImage: `url('/src/assets/images/image/wave_left_corner.png')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "500px",
+    };
 
-  return (
-    <div>
-      {loading ? (
-        <div className="flex items-center justify-center h-[70vh]">
-          <img src={loadingIcon} alt="" />
-        </div>
-      ) : filteredProduct.length > 0 ? (
+    return (
         <div>
-          <div style={backgroundStyle1}>
-            <div className="max-w-screen-xl mx-auto px-3">
-              <h2 className="text-4xl lg:text-5xl text-center font-semibold pt-2">{title}</h2>
-              <div className="mx-auto">
-                <Swiper
-                  spaceBetween={30}
-                  autoplay={{
-                    delay: 2000,
-                    disableOnInteraction: false,
-                  }}
-                  effect={"coverflow"}
-                  grabCursor={true}
-                  centeredSlides={true}
-                  slidesPerView={"auto"}
-                  coverflowEffect={{
-                    rotate: 50,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: true,
-                  }}
-                  pagination={true}
-                  modules={[EffectCoverflow, Pagination, Autoplay]}
-                  className="mySwiper"
-                >
-                  <SwiperSlide>
-                    <img className="h-[400px] md:h-[450px] lg:h-[500px]" src={slider_img1} alt="Slider 1" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img className="h-[400px] md:h-[450px] lg:h-[500px]" src={slider_img2} alt="Slider 2" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img className="h-[400px] md:h-[450px] lg:h-[500px]" src={slider_img3} alt="Slider 3" />
-                  </SwiperSlide>
-                </Swiper>
-              </div>
-            </div>
-          </div>
-
-          <div style={backgroundStyle2}>
-            <div className="max-w-screen-xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                  {filteredProduct.map((product) => (
-                    <BrandProducts key={product._id} product={product} />
-                  ))}
+            {loading ? (
+                <div className="flex items-center justify-center h-[70vh]">
+                    <img src={loadingIcon} alt="" />
                 </div>
-              
-            </div>
-          </div>
+            ) : filteredProduct.length > 0 ? (
+                <div>
+                    <div style={backgroundStyle1}>
+                        <div className="max-w-screen-xl mx-auto px-3">
+                            <h2 className="text-4xl lg:text-5xl text-center font-semibold pt-2">{title}</h2>
+                            <div className="mx-auto">
+                                <Swiper
+                                    spaceBetween={30}
+                                    autoplay={{
+                                        delay: 2000,
+                                        disableOnInteraction: false,
+                                    }}
+                                    effect={"coverflow"}
+                                    grabCursor={true}
+                                    centeredSlides={true}
+                                    slidesPerView={"auto"}
+                                    coverflowEffect={{
+                                        rotate: 50,
+                                        stretch: 0,
+                                        depth: 100,
+                                        modifier: 1,
+                                        slideShadows: true,
+                                    }}
+                                    pagination={true}
+                                    modules={[EffectCoverflow, Pagination, Autoplay]}
+                                    className="mySwiper"
+                                >
+                                    <SwiperSlide>
+                                        <img className="h-[400px] md:h-[450px] lg:h-[500px]" src={slider_img1} alt="Slider 1" />
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <img className="h-[400px] md:h-[450px] lg:h-[500px]" src={slider_img2} alt="Slider 2" />
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <img className="h-[400px] md:h-[450px] lg:h-[500px]" src={slider_img3} alt="Slider 3" />
+                                    </SwiperSlide>
+                                </Swiper>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style={backgroundStyle2}>
+                        <div className="max-w-screen-xl mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                                {filteredProduct.map((product) => (
+                                    <BrandProducts key={product._id} product={product} />
+                                ))}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <div className="flex flex-col items-center my-10">
+                    <h1 className="text-[#171717] text-xl md:text-4xl font-bold text-center mt-5">
+                        No products available for this brand.
+                    </h1>
+                </div>
+            )}
         </div>
-      ) : (
-        <div className="flex flex-col items-center my-10">
-          <h1 className="text-[#171717] text-xl md:text-4xl font-bold text-center mt-5">
-            No products available for this brand.
-          </h1>
-        </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default BrandDetails;

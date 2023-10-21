@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import addIcon from "../../assets/images/icon/addIcon.gif"
+import Swal from 'sweetalert2';
+
 
 const AddProduct = () => {
     const [brandName, setBrandName] = useState('');
@@ -28,7 +30,12 @@ const AddProduct = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    alert('new Product added')
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'New Product added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
                     e.target.reset();
                 }
             })
@@ -114,12 +121,8 @@ const AddProduct = () => {
                         </label>
                         <textarea type="text" name="details" className="textarea textarea-bordered" placeholder="Details"></textarea>
                     </div>
-                    <div type="submit" className="form-control btn bg-gray-300 w-3/4  md:w-1/2 lg:w-1/4 mx-auto rounded-3xl mt-2 ">
-                        <div className="flex items-center">
-                            <p >Add Product</p>
-                            <img className="w-12" src={addIcon} alt="" />
-                        </div>
-                    </div>
+                    <input type="submit" value="Add Product" className="btn btn-block w-3/4 md:w-1/2 lg:w-1/4 mx-auto rounded-3xl mt-2 " />
+
                 </form>
             </div>
         </div>
