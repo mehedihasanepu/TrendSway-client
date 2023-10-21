@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://trend-sway-server-r9h230hqg-mehedi-hasan-epus-projects.vercel.app/products/${params.id}`)
             },
             {
                 path: "/brandDetails/:id",
