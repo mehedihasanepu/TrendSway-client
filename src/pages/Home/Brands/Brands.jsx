@@ -11,8 +11,8 @@ const Brands = () => {
     }, [])
 
     return (
-        <div className="mt-10 max-w-screen-xl mx-auto">
-            <h2 className="text-4xl md:text-5xl text-center font-semibold  py-6" >POPULAR BRANDS</h2>
+        <div className="pt-10 max-w-screen-xl mx-auto">
+            <h2 className="text-3xl md:text-5xl text-center font-semibold  py-6" >POPULAR BRANDS</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 px-10 lg:px-0 lg:grid-cols-6 gap-5">
 
                 {
@@ -37,3 +37,9 @@ const Brands = () => {
 };
 
 export default Brands;
+
+
+
+
+
+

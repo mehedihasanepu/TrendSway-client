@@ -23,7 +23,7 @@ const WhatTheySay = () => {
 
         <div className='max-w-screen-xl mx-auto '>
             <h2 className="text-3xl md:text-4xl text-center font-semibold pt-10" >Customer Review </h2>
-            <div className='h-[65vh]' >
+            <div className='h-[100vh] md:h-[80vh] lg:h-[65vh]' >
 
                 <Swiper
                     spaceBetween={30}
@@ -46,7 +46,7 @@ const WhatTheySay = () => {
                     <SwiperSlide className='pt-20'>
                         <div className='w-8/12'>
                             <h3 className="text-xl">WHAT THEY’RE SAYING</h3>
-                            <p className='text-gray-500 text-[16px] leading-7 pt-2'>I am thrilled with my recent purchase from this e-commerce site. Their range of brands is fantastic. I snagged a stylish Adidas jacket and some trendy Zara pieces, all at great prices. The user-friendly website made my shopping experience a breeze, and the quick shipping was a pleasant surprise.</p>
+                            <p className='text-gray-500 text-[16px] leading-7 pt-2'>I am thrilled with my recent purchase from this e-commerce site. Their range of brands is fantastic. I snagged a stylish Adidas jacket and some trendy Zara pieces, all at great </p>
                             <h3 className='pt-12'>Sarah Anderson </h3>
                             <p className='text-xs pt-1'>Marine Biologist</p>
                         </div>

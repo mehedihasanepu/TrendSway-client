@@ -1,8 +1,8 @@
 
 const FeaturedProducts = () => {
     return (
-        <div className="max-w-screen-xl mx-auto  my-10">
-            <h2 className="text-4xl md:text-5xl text-center font-semibold  py-6" >FEATURED PRODUCTS</h2>
+        <div className="max-w-screen-xl mx-auto  mt-10 pb-10">
+            <h2 className="text-3xl md:text-5xl text-center font-semibold  py-6" >FEATURED PRODUCTS</h2>
 
             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 
@@ -36,7 +36,7 @@ const FeaturedProducts = () => {
 
 
 
-                <div className=" relative  col-span-2 bg-amber-50">
+                <div className=" relative col-span-1 md:col-span-2 bg-amber-50">
                     <div>
                         <img className="w-full h-[450px] " src="https://i.ibb.co/zV9yx6v/018153596ec041a489d8ac070105017b-9366-removebg-preview.png" alt="" />
                     </div>
@@ -50,7 +50,7 @@ const FeaturedProducts = () => {
 
 
 
-                <div className=" relative  col-span-2">
+                <div className=" relative col-span-1 md:col-span-2">
                     <div>
                         <img className="w-full h-[450px] " src="https://i.ibb.co/HCVb5Rm/main-home-product-17.jpg" alt="" />
                     </div>

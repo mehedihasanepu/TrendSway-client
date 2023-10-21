@@ -37,12 +37,12 @@ const AddProduct = () => {
 
     return (
         <div>
-            <div className="bg-[#F4F3F0] p-24">
+            <div className="bg-[#F4F3F0] p-5 md:p-12 lg:p-24">
                 <form onSubmit={handleAddCoffee} className="card-body">
                     <div>
                         <h2 className="text-4xl font-bold text-center">Add Product</h2>
                     </div>
-                    <div className="flex justify-between gap-10">
+                    <div className="flex flex-col md:flex-row justify-between gap-10">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Product Name</span>
@@ -56,7 +56,7 @@ const AddProduct = () => {
                             <input type="text" name="productImg" placeholder="Image URL" className="input input-bordered" />
                         </div>
                     </div>
-                    <div className="flex justify-between gap-10">
+                    <div className="flex flex-col md:flex-row justify-between gap-10">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Brand Name</span>
@@ -94,7 +94,7 @@ const AddProduct = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="flex justify-between gap-10">
+                    <div className="flex flex-col md:flex-row justify-between gap-10">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Price</span>
@@ -114,7 +114,7 @@ const AddProduct = () => {
                         </label>
                         <textarea type="text" name="details" className="textarea textarea-bordered" placeholder="Details"></textarea>
                     </div>
-                    <div type="submit" className="form-control btn bg-gray-300 w-1/4 mx-auto rounded-3xl mt-2 ">
+                    <div type="submit" className="form-control btn bg-gray-300 w-3/4  md:w-1/2 lg:w-1/4 mx-auto rounded-3xl mt-2 ">
                         <div className="flex items-center">
                             <p >Add Product</p>
                             <img className="w-12" src={addIcon} alt="" />

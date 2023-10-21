@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import updateIcon from '../../assets/images/icon/update.gif';
 
 const UpdateProduct = () => {
 
@@ -41,12 +42,12 @@ const UpdateProduct = () => {
 
     return (
         <div>
-            <div className="bg-[#F4F3F0] p-24">
+            <div className="bg-[#F4F3F0] p-5 md:p-12 lg:p-24">
                 <form onSubmit={handleUpdateProduct} className="card-body">
                     <div>
                         <h2 className="text-4xl font-bold text-center">Update Product</h2>
                     </div>
-                    <div className="flex justify-between gap-10">
+                    <div className="flex flex-col md:flex-row justify-between gap-10">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Product Name</span>
@@ -60,7 +61,7 @@ const UpdateProduct = () => {
                             <input type="text" name="productImg" placeholder="Image URL" defaultValue={productImg} className="input input-bordered" />
                         </div>
                     </div>
-                    <div className="flex justify-between gap-10">
+                    <div className="flex flex-col md:flex-row justify-between gap-10">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Brand Name</span>
@@ -98,7 +99,7 @@ const UpdateProduct = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="flex justify-between gap-10">
+                    <div className="flex flex-col md:flex-row justify-between gap-10">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-lg font-semibold">Price</span>
@@ -118,8 +119,11 @@ const UpdateProduct = () => {
                         </label>
                         <textarea type="text" name="details" className="textarea textarea-bordered" defaultValue={details} placeholder="Details"></textarea>
                     </div>
-                    <div type="submit" className="form-control mt-2">
-                        <button className="btn rounded-3xl bg-slate-300">Update Product</button>
+                    <div type="submit" className="form-control btn bg-gray-300 w-3/4 md:w-1/2 lg:w-1/4 mx-auto rounded-3xl mt-2 ">
+                        <div className="flex items-center">
+                            <p >Update Product</p>
+                            <img className="w-10" src={updateIcon} alt="" />
+                        </div>
                     </div>
                 </form>
             </div>
