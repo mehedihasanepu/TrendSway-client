@@ -47,12 +47,12 @@ const Navbar = () => {
 
 
     return (
-        <div className="max-w-screen-xl mx-auto mb-1 rounded-b-2xl border-b-8 border-x-2 border-gray-300">
+        <div className="max-w-screen-xl mx-auto mb-1 py-1 rounded-b-2xl border-b-8 border-x-2 border-gray-300">
             <div  >
                 <div className={`flex flex-row items-center md:px-5 justify-between `}>
 
                     <div>
-                        <img className="w-36 h-20" src={logo} alt="" />
+                        <img className="w-32 h-16" src={logo} alt="" />
                     </div>
                     <div className="lg:hidden flex">
                         <UserProfile></UserProfile>

@@ -37,7 +37,7 @@ const BrandDetails = () => {
     }, [product, brand_name]);
 
     return (
-        <div>
+        <div className="max-w-screen-xl mx-auto">
             <h2 className="text-4xl lg:text-5xl text-center font-semibold pt-2">{title}</h2>
             <div className="mx-auto">
                 <Swiper

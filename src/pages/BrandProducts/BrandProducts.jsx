@@ -20,16 +20,16 @@ const BrandProducts = ({ product }) => {
 
                     <div className="flex justify-between gap-5">
 
-                        <Link to={`/brandProductDetails/${_id}`} className="card-actions flex-1 btn bg-gray-300 w-1/2 mx-auto rounded-xl pt-1 ">
-                            <div className="flex items-center gap-2">
+                        <Link to={`/brandProductDetails/${_id}`} className="card-actions flex-1 btn bg-gray-300 w-1/2 mx-auto rounded-xl pt-2 ">
+                            <div className="flex items-center gap-1">
                                 <p >Details</p>
-                                <img className="w-10" src={detailsIcon} alt="" />
+                                <img className="w-8" src={detailsIcon} alt="" />
                             </div>
                         </Link>
-                        <Link to={`/update/${_id}`} className="card-actions flex-1 btn bg-gray-300 w-1/2 mx-auto rounded-xl pt-2 ">
-                            <div className="flex items-center gap-2">
+                        <Link to={`/update/${_id}`} className="card-actions flex-1 btn bg-gray-300 w-1/2 mx-auto rounded-xl pt-3 ">
+                            <div className="flex items-center">
                                 <p >Update Product</p>
-                                <img className="w-8" src={updateIcon} alt="" />
+                                <img className="w-7" src={updateIcon} alt="" />
                             </div>
                         </Link>
 

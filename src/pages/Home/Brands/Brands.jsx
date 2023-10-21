@@ -12,14 +12,14 @@ const Brands = () => {
 
     return (
         <div className="mt-10 max-w-screen-xl mx-auto">
-            <h2 className="text-4xl md:text-5xl text-center font-semibold  py-6" >Popular Brands</h2>
-            <div className="flex justify-between items-center">
+            <h2 className="text-4xl md:text-5xl text-center font-semibold  py-6" >POPULAR BRANDS</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 px-10 lg:px-0 lg:grid-cols-6 gap-5">
 
                 {
                     brands.map(brand => <div key={brand.id} >
 
                         <Link className="p-3" to={`/brandDetails/${brand.id}`}>
-                            <div className="border-2 px-5 py-10 rounded-2xl bg-white">
+                            <div className="border-2 px-5 py-10 rounded-2xl bg-white flex flex-col justify-center items-center">
                                 <div className="h-24">
                                     <img className="w-32 " src={brand.brand_img} alt="" />
 
