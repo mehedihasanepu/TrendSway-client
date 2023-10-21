@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import deleteIcon from "../../assets/images/icon/delete.gif"
 import Swal from 'sweetalert2'
@@ -5,7 +6,7 @@ import Swal from 'sweetalert2'
 const CartCard = ({ cardProduct, cardProducts, setCardProducts }) => {
 
 
-    const { _id, productName, productImg, details, brandName, productType, price, rating } = cardProduct;
+    const { _id, productName, productImg, brandName, productType, price, rating } = cardProduct;
     console.log(cardProduct);
 
 

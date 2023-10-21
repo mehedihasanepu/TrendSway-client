@@ -11,6 +11,7 @@ import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
 import Login from "../pages/LogIn/LogIn";
 import SingUp from "../pages/SingUp/SingUp";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Errorpage from "../Errorpage/Errorpage";
 
 
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <App></App>,
+        errorElement:<Errorpage></Errorpage>,
         children: [
             {
                 path: '/',

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import addIcon from "../../assets/images/icon/addIcon.gif"
 import Swal from 'sweetalert2';
 
 
@@ -121,7 +120,7 @@ const AddProduct = () => {
                         </label>
                         <textarea type="text" name="details" className="textarea textarea-bordered" placeholder="Details"></textarea>
                     </div>
-                    <input type="submit" value="Add Product" className="btn btn-block w-3/4 md:w-1/2 lg:w-1/4 mx-auto rounded-3xl mt-2 " />
+                    <input type="submit" value="Add Product" className="btn bg-slate-300 w-3/4 md:w-1/2 lg:w-1/4 mx-auto rounded-3xl mt-2 " />
 
                 </form>
             </div>

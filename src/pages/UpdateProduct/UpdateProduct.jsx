@@ -23,7 +23,7 @@ const UpdateProduct = () => {
         console.log(updateProduct);
 
 
-        fetch(`http://localhost:5000/products/${_id}`, {
+        fetch(`https://trend-sway-server-r9h230hqg-mehedi-hasan-epus-projects.vercel.app/products/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -125,7 +125,7 @@ const UpdateProduct = () => {
                         <textarea type="text" name="details" className="textarea textarea-bordered" defaultValue={details} placeholder="Details"></textarea>
                     </div>
                     
-                    <input type="submit" value="Update Product" className="btn btn-block w-3/4 md:w-1/2 lg:w-1/4 mx-auto rounded-3xl mt-2 " />
+                    <input type="submit" value="Update Product" className="btn bg-slate-300  w-3/4 md:w-1/2 lg:w-1/4 mx-auto rounded-3xl mt-2 " />
                 </form>
             </div>
         </div>
